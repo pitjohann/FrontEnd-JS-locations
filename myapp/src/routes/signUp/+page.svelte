@@ -1,3 +1,10 @@
+<script>
+	import { enhance } from '$app/forms';
+
+	/** @type {import('./$types').ActionData} */
+	export let form;
+</script>
+
 <svelte:head>
 	<title>Sign Up</title>
 	<meta name="description" content="About this app" />
@@ -14,7 +21,7 @@
 
 
 
-				<form method="POST">
+				<form use:enhance method="POST">
 					<fieldset class="form-group">
 						<input
 								class="form-control form-control-lg"
