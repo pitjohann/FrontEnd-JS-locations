@@ -1,3 +1,10 @@
+<script>
+	import { enhance } from '$app/forms';
+
+	/** @type {import('./$types').ActionData} */
+	export let form;
+</script>
+
 <div class="auth-page">
 	<div class="container page">
 		<div class="row">
@@ -9,7 +16,7 @@
 
 
 
-				<form  method="POST">
+				<form  use:enhance method="POST">
 					<fieldset class="form-group">
 						<input
 								class="form-control form-control-lg"

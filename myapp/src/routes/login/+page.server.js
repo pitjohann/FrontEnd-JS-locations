@@ -23,9 +23,9 @@ export const actions = {
             return fail(401, body);
         }
 
-        const value = btoa(JSON.stringify(body.jwt));
-        cookies.set('jwt', value, { path: '/' });
+        //const value = btoa(JSON.stringify(body.jwt));
+        cookies.set('jwt', body.jwt, { path: '/' });
 
-        throw redirect(307, '/');
+        throw redirect(307, '/Location');
     }
 };
