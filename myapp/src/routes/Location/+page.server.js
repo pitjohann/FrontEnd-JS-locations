@@ -7,6 +7,6 @@ export async function load({ locals, params }) {
         let body = await api.get('locations',token);
 
 
-        //console.log(body);
+        console.log(token);
         return {body,token};
 }

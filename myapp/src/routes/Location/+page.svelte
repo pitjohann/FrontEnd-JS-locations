@@ -5,22 +5,6 @@
     export let data;
     let film = data.body;
     let token = data.token;
-    /*if(token === {}) {
-        window.location.href = '/login';
-    }
-    /*
-    let hasRole = true
-    let roles = JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString());
-
-    if (roles === "user") {
-        hasRole = false
-    }*/
-
-
-
-
-
-
 
     function editLoc(_id) {
 
@@ -44,15 +28,13 @@
         width: 100%;
     }
 
-    th, td,button {
+    td,button {
         border: 2px solid black;
         padding: 8px;
         text-align: left;
     }
 
-    th {
-        background-color: #ddd;
-    }
+
     button {
         width: 135px;
         height: 40px;
@@ -61,7 +43,7 @@
 </style>
 
     <a href="/addLocation">
-    <button style="display: none" >
+    <button>
         Add Location
     </button>
     </a>
