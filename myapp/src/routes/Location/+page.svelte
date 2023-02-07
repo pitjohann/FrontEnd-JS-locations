@@ -9,8 +9,14 @@
    let has_role = true;
 
 
-
-
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+    const payload = JSON.parse(jsonPayload);
+    let roles = payload.role;
+    console.log(roles);
 
 
     function editLoc(_id) {
@@ -25,7 +31,7 @@
     }
 </script>
 
-{#if has_role}
+
 
 
 
@@ -50,21 +56,24 @@
         margin: 5px;
     }
 </style>
-    <a href="/addLocation">
-    <button >
-        Add Location
-    </button>
-    </a>
+    {#if roles === "admin"}
+        <a href="/addLocation">
+        <button >
+            Add Location
+        </button>
+        </a>
+        {/if}
 <table>
 {#each film as element}
  <tr>
-
+     {#if roles === "admin"}
      <button on:click={() => editLoc()}>
          Edit Location
      </button>
      <button on:click={() => deleteLoc(element._id)}>
          Delete Location
      </button>
+     {/if}
      <td on:click={() => showModal = {data: element}}>
          Type de tournage : {element.filmType}
      </td>
@@ -87,5 +96,4 @@
 </table>
 {#if showModal}
     <Modal close={() => showModal = false} data={showModal.data} />
-{/if}
 {/if}
