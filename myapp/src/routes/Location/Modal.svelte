@@ -3,34 +3,34 @@
 
 
         <td>
-            filmType = {data.filmType};
+            Type de film : {data.filmType};
         </td>
         <td>
-            filmProducerName = {data.filmProducerName};
+            Nom du Producteur : {data.filmProducerName};
         </td>
         <td>
-            endDate = {data.endDate};
+            Date de Fin : {data.endDate};
         </td>
         <td>
-            filmName = {data.filmName};
+            Nom du film : {data.filmName};
         </td>
         <td>
-            district = {data.district};
+            Arrondissement : {data.district};
         </td>
         <td>
-            sourceLocationId = {data.sourceLocationId};
+            IdSourceLieu : {data.sourceLocationId};
         </td>
         <td>
-            filmDirectorName = {data.filmDirectorName};
+            Nom du Directeur : {data.filmDirectorName};
         </td>
         <td>
-            address = {data.address};
+            adresse  {data.address};
         </td>
         <td>
-            startDate = {data.startDate};
+            Date de début : {data.startDate};
         </td>
         <td>
-            year = {data.year};
+            Année de sortie : {data.year};
         </td>
     </tr>
     <button on:click={close}>Close</button>

@@ -16,7 +16,7 @@
     }).join(''));
     const payload = JSON.parse(jsonPayload);
     let roles = payload.role;
-    console.log(roles);
+
 
 
     function editLoc(_id) {
@@ -64,6 +64,16 @@
         </a>
         {/if}
 <table>
+    <tr>
+        {#if roles === "admin"}
+         <th>Modifier/Supprimer</th>
+         {/if}
+        <th>Type de tournage</th>
+        <th>Nom du Producteur</th>
+        <th>Nom du Film </th>
+        <th>Nom du Directeur </th>
+        <th>Année de sortie</th>
+    </tr>
 {#each film as element}
  <tr>
      {#if roles === "admin"}
@@ -75,21 +85,21 @@
      </button>
      {/if}
      <td on:click={() => showModal = {data: element}}>
-         Type de tournage : {element.filmType}
+         {element.filmType}
      </td>
      <td on:click={() => showModal = {data: element}}>
-         Nom du Producteur : {element.filmProducerName}
-     </td>
-
-     <td on:click={() => showModal = {data: element}}>
-         Nom du Film : {element.filmName}
-     </td>
-     <td on:click={() => showModal = {data: element}}>
-         Nom du Directeur : {element.filmDirectorName}
+         {element.filmProducerName}
      </td>
 
      <td on:click={() => showModal = {data: element}}>
-         Année de sortie : {element.year}
+         {element.filmName}
+     </td>
+     <td on:click={() => showModal = {data: element}}>
+         {element.filmDirectorName}
+     </td>
+
+     <td on:click={() => showModal = {data: element}}>
+         {element.year}
      </td>
  </tr>
 {/each}
