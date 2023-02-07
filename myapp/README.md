@@ -12,7 +12,7 @@ The line was changed so that the findAll function returns the latest added locat
 ```bash
 
 # go to the directory where the files are
-cd my_app
+cd myapp
 
 #have the latest dependencies
 npm install
