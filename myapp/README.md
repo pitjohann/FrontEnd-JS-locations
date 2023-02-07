@@ -1,6 +1,7 @@
 # FrontEnd Locations
 
 Here is everything you need to know about this FrontEnd.
+TL;DR at the end.
 ## Backend
 
 The backend used was the one provided by Mr. Moreau, the only change done was line 19 of the locations.service.js :
@@ -27,6 +28,7 @@ The big button in the middle is really working and leads you to the login page, 
 
 # What works
 
+By clicking on the button, you can only get to Location after logging in.
 The register page adds a user to the database. There isn't any way to add an admin, it needs to be done manually.
 The login page enables you to login, as the name implies.
 The Location page is available but if you aren't logged in, you won't be able to see it.
@@ -39,8 +41,9 @@ If you click on any part of the array it will give you the detailed information 
 
 The Edit button doesn't do anything, I didn't know how to send the Id from one page to another so the code is in full comments (for now).
 On the Add location page, if the format of the data isn't the right one the program will crash so make sure to do it well.
-When you aren't logged in, acceding to the Location page won't be possible and will create an error message so please make sure to login before doing this.
+When you aren't logged in, acceding to the Location page won't be possible and will create an error message if you put the link to the location page manually.
+Same Thing for the addLocation menu which can be reached with the absolute link, but you won't be able to create a location if you aren't an admin.
 
 
-TL;DR: Basic Layout Done, US1 US3 US4 US6 Done.
-Not Done : US2, US5.
+TL;DR: Basic Layout Done, US1 US3 US4 US6 Done. US2 half-done
+Not Done : US2 half-done, US5.
