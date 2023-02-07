@@ -6,19 +6,27 @@
     let film = data.body;
     let token = data.token;
 
+   let has_role = true;
+
+
+
+
+
+
+
     function editLoc(_id) {
 
     }
 
     function deleteLoc(_id){
-        console.log(_id)
-        api.del(`locations/${_id}`,token)
-        window.location.reload()
+        console.log(token);
+        api.del(`locations/${_id}`,token);
+        window.location.reload();
 
     }
 </script>
 
-
+{#if has_role}
 
 
 
@@ -28,26 +36,26 @@
         width: 100%;
     }
 
-    td,button {
+    th, td,button {
         border: 2px solid black;
         padding: 8px;
         text-align: left;
     }
 
-
+    th {
+        background-color: #ddd;
+    }
     button {
         width: 135px;
         height: 40px;
         margin: 5px;
     }
 </style>
-
     <a href="/addLocation">
-    <button>
+    <button >
         Add Location
     </button>
     </a>
-
 <table>
 {#each film as element}
  <tr>
@@ -59,38 +67,26 @@
          Delete Location
      </button>
      <td on:click={() => showModal = {data: element}}>
-         filmType : {element.filmType};
+         Type de tournage : {element.filmType}
      </td>
      <td on:click={() => showModal = {data: element}}>
-         filmProducerName = {element.filmProducerName};
+         Nom du Producteur : {element.filmProducerName}
+     </td>
+
+     <td on:click={() => showModal = {data: element}}>
+         Nom du Film : {element.filmName}
      </td>
      <td on:click={() => showModal = {data: element}}>
-         endDate = {element.endDate};
+         Nom du Directeur : {element.filmDirectorName}
      </td>
+
      <td on:click={() => showModal = {data: element}}>
-         filmName = {element.filmName};
-     </td>
-     <td on:click={() => showModal = {data: element}}>
-         district = {element.district};
-     </td>
-     <td on:click={() => showModal = {data: element}}>
-         sourceLocationId = {element.sourceLocationId};
-     </td>
-     <td on:click={() => showModal = {data: element}}>
-         filmDirectorName = {element.filmDirectorName};
-     </td>
-     <td on:click={() => showModal = {data: element}}>
-         address = {element.address};
-     </td>
-     <td on:click={() => showModal = {data: element}}>
-         startDate = {element.startDate};
-     </td>
-     <td on:click={() => showModal = {data: element}}>
-         year = {element.year};
+         Année de sortie : {element.year}
      </td>
  </tr>
 {/each}
 </table>
 {#if showModal}
     <Modal close={() => showModal = false} data={showModal.data} />
+{/if}
 {/if}

@@ -48,6 +48,20 @@
         align-items: center;
         justify-content: center;
     }
+
+    td,button {
+        border: 2px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+
+
+    button {
+        width: 135px;
+        height: 40px;
+        margin: 5px;
+    }
+
 </style>
 
 <script>

@@ -1,7 +1,8 @@
+/*
 import { fail, redirect } from '@sveltejs/kit';
 import * as api from '$lib/api.js';
 
-/** @type {import('./$types').PageServerLoad} */
+/!** @type {import('./$types').PageServerLoad} *!/
 export async function load({cookies }) {
     if (!cookies){
         return fail(401);
@@ -10,7 +11,7 @@ export async function load({cookies }) {
 
 }
 
-/** @type {import('./$types').Actions} */
+/!** @type {import('./$types').Actions} *!/
 export const actions = {
     default: async ({ cookies, request }) => {
         const data = await request.formData();
@@ -40,3 +41,4 @@ export const actions = {
         throw redirect(307, '/Location');
     }
 };
+*/
