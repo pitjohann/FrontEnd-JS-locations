@@ -1,4 +1,7 @@
 <script>
+
+    import Modal from './Modal.svelte';
+    let showModal = false;
     export let data;
     let film = data.body;
     let has_role = true;
@@ -8,15 +11,14 @@
     }
 
 
-    function addLoc() {
 
-    }
 
     function editLoc(_id) {
 
     }
 
     function deleteLoc(_id){
+
 
     }
 </script>
@@ -46,9 +48,11 @@
         margin: 5px;
     }
 </style>
-    <button on:click={() => addLoc()}>
+    <a href="/addLocation">
+    <button >
         Add Location
     </button>
+    </a>
 <table>
 {#each film as element}
  <tr>
@@ -59,7 +63,7 @@
      <button on:click={() => deleteLoc()}>
          Delete Location
      </button>
-     <td>
+     <td on:click={() => showModal = {data: element}}>
          filmType = {element.filmType};
      </td>
      <td>
@@ -92,4 +96,7 @@
  </tr>
 {/each}
 </table>
+{#if showModal}
+    <Modal close={() => showModal = false} data={showModal.data} />
+{/if}
 {/if}
