@@ -35,6 +35,6 @@ export function post(path, data, token) {
     return send({ method: 'POST', path, data, token });
 }
 
-export function put(path, data, token) {
-    return send({ method: 'PUT', path, data, token });
+export function patch(path, data, token) {
+    return send({ method: 'PATCH', path, data, token });
 }

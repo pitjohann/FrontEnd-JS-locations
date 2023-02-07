@@ -1,14 +1,23 @@
 <script>
-
+    import * as api from '$lib/api.js';
     import Modal from './Modal.svelte';
     let showModal = false;
     export let data;
     let film = data.body;
-    let has_role = true;
-
-    if (!has_role) {
+    let token = data.token;
+    /*if(token === {}) {
         window.location.href = '/login';
     }
+    /*
+    let hasRole = true
+    let roles = JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString());
+
+    if (roles === "user") {
+        hasRole = false
+    }*/
+
+
+
 
 
 
@@ -18,12 +27,14 @@
     }
 
     function deleteLoc(_id){
-
+        console.log(_id)
+        api.del(`locations/${_id}`,token)
+        window.location.reload()
 
     }
 </script>
 
-{#if has_role}
+
 
 
 
@@ -48,11 +59,13 @@
         margin: 5px;
     }
 </style>
+
     <a href="/addLocation">
-    <button >
+    <button style="display: none" >
         Add Location
     </button>
     </a>
+
 <table>
 {#each film as element}
  <tr>
@@ -60,37 +73,37 @@
      <button on:click={() => editLoc()}>
          Edit Location
      </button>
-     <button on:click={() => deleteLoc()}>
+     <button on:click={() => deleteLoc(element._id)}>
          Delete Location
      </button>
      <td on:click={() => showModal = {data: element}}>
-         filmType = {element.filmType};
+         filmType : {element.filmType};
      </td>
-     <td>
+     <td on:click={() => showModal = {data: element}}>
          filmProducerName = {element.filmProducerName};
      </td>
-     <td>
+     <td on:click={() => showModal = {data: element}}>
          endDate = {element.endDate};
      </td>
-     <td>
+     <td on:click={() => showModal = {data: element}}>
          filmName = {element.filmName};
      </td>
-     <td>
+     <td on:click={() => showModal = {data: element}}>
          district = {element.district};
      </td>
-     <td>
+     <td on:click={() => showModal = {data: element}}>
          sourceLocationId = {element.sourceLocationId};
      </td>
-     <td>
+     <td on:click={() => showModal = {data: element}}>
          filmDirectorName = {element.filmDirectorName};
      </td>
-     <td>
+     <td on:click={() => showModal = {data: element}}>
          address = {element.address};
      </td>
-     <td>
+     <td on:click={() => showModal = {data: element}}>
          startDate = {element.startDate};
      </td>
-     <td>
+     <td on:click={() => showModal = {data: element}}>
          year = {element.year};
      </td>
  </tr>
@@ -98,5 +111,4 @@
 </table>
 {#if showModal}
     <Modal close={() => showModal = false} data={showModal.data} />
-{/if}
 {/if}

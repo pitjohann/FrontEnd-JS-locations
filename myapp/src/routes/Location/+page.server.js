@@ -4,7 +4,9 @@ export async function load({ locals, params }) {
 
         let token = locals.token;
 
-        const body = await api.get('locations',token);
+        let body = await api.get('locations',token);
+
+
         //console.log(body);
-        return {body};
+        return {body,token};
 }
