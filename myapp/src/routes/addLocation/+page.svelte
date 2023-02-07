@@ -5,6 +5,8 @@
     export let form;
 </script>
 
+
+<a href="/Location"> return to Location menu</a>
 <div class="auth-page">
     <div class="container page">
         <div class="row">
@@ -109,3 +111,5 @@
         </div>
     </div>
 </div>
+
+
