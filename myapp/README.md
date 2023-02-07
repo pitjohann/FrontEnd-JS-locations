@@ -32,11 +32,15 @@ The login page enables you to login, as the name implies.
 The Location page is available but if you aren't logged in, you won't be able to see it.
 # Location page
 On this page you can see the 20 latest added locations (or oldest if the back isn't changed).
-There is an add button that opens a new tab and let's you create a new user. 
-If you are an admin, you'll be able to create it. If not, you'll have an error because you need to be an admin.
-If you are an admin, the delete button will work, if you are a user it won't.
-
+If you are an Admin you'll see an Add Location button and for each location an Edit location and Delete location button.
+The Add location button leads you to a new page enabling you to put the information needed for a location.
+If you click on any part of the array it will give you the detailed information of the location you clicked on by a Modal popping-out on your screen.
 # What doesn't work
 
 The Edit button doesn't do anything, I didn't know how to send the Id from one page to another so the code is in full comments (for now).
-I 
+On the Add location page, if the format of the data isn't the right one the program will crash so make sure to do it well.
+When you aren't logged in, acceding to the Location page won't be possible and will create an error message so please make sure to login before doing this.
+
+
+TL;DR: Basic Layout Done, US1 US3 US4 US6 Done.
+Not Done : US2, US5.
