@@ -13,14 +13,13 @@
 
 
 
-
     function editLoc(_id) {
 
     }
 
-    function deleteLoc(_id){
+    async function deleteLoc(_id) {
         console.log(token);
-        api.del(`locations/${_id}`,token);
+        await api.del(`locations/${_id}`, token);
         window.location.reload();
 
     }

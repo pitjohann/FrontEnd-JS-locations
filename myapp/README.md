@@ -1,17 +1,23 @@
-# create-svelte
+# FrontEnd Locations
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Here is everything you need to know about this FrontEnd.
+## Backend
 
-## Creating a project
+The backend used was the one provided by Mr. Moreau, the only change done was line 19 of the locations.service.js :
+return Location.find().limit(limit).skip(offset).sort({_id:-1});
 
-If you're seeing this, you've probably already done this step. Congrats!
+The line was changed so that the findAll function returns the latest added locations.
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
 
-# create a new project in my-app
-npm create svelte@latest my-app
+# go to the directory where the files are
+cd my_app
+
+#have the latest dependencies
+npm install
+
+# start the FrontEnd
+npm run dev
 ```
 
 ## Developing
