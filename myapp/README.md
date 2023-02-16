@@ -12,7 +12,7 @@ The line was changed so that the findAll function returns the latest added locat
 ```bash
 
 # go to the directory where the files are
-cd my_app
+cd myapp
 
 #have the latest dependencies
 npm install
@@ -46,4 +46,5 @@ Same Thing for the addLocation menu which can be reached with the absolute link,
 
 
 TL;DR: Basic Layout Done, US1 US3 US4 US6 Done. US2 half-done
+
 Not Done : US2 half-done, US5.
